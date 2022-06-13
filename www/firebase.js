@@ -176,6 +176,11 @@ exports.getInfo = function (success, error) {
   exec(success, error, "FirebasePlugin", "getInfo", []);
 };
 
+exports.getKeysAndValuesWithPrefix = function (prefix, success, error) {
+    var args = [prefix];
+    exec(success, error, "FirebasePlugin", "getKeysAndValuesWithPrefix", args);
+};
+
 exports.setConfigSettings = function (fetchTimeout, minimumFetchInterval, success, error) {
   exec(success, error, "FirebasePlugin", "setConfigSettings", [fetchTimeout, minimumFetchInterval]);
 };
@@ -212,6 +217,9 @@ exports.clearAllNotifications = function (success, error) {
   exec(success, error, "FirebasePlugin", "clearAllNotifications", []);
 };
 
+exports.onDynamicLink = function(success, error) {
+    exec(success, error, "FirebasePlugin", "onDynamicLink", []);
+};
 
 // Crashlytics
 exports.setCrashlyticsCollectionEnabled = function (enabled, success, error) {
